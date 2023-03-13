@@ -5,6 +5,8 @@ import { Statistics } from './Statistics/Statistics';
 import { Notification } from './Notification/Notification';
 import React from 'react';
 
+import { SectionBox } from './AppSection.styled';
+
 export class App extends Component {
   state = {
     good: 0,
@@ -38,7 +40,7 @@ export class App extends Component {
 
   render() {
     return (
-      <>
+      <SectionBox>
         <Section title={'Please Leave FeedBack'}>
           <FeedBackOptions
             options={[this.state]}
@@ -60,7 +62,7 @@ export class App extends Component {
             <Notification message={'There is no feedback'} />
           )}
         </Section>
-      </>
+      </SectionBox>
     );
   }
 }

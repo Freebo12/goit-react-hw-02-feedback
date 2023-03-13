@@ -1,4 +1,10 @@
 import PropTypes from 'prop-types';
+import {
+  ListStatistics,
+  ListElem,
+  ContentSpan,
+  PositiveFeedBack,
+} from './Statistics.styled';
 
 export const Statistics = ({
   good,
@@ -8,26 +14,26 @@ export const Statistics = ({
   positivePercentage,
 }) => {
   return (
-    <ul>
-      <li>
-        <span good={good}>Good:{good}</span>
-      </li>
-      <li>
-        <span neutral={neutral}>Neutral:{neutral}</span>
-      </li>
-      <li>
-        <span bad={bad}>Bad:{bad}</span>
-      </li>
-      <li>
-        <span>Total:{total}</span>
-      </li>
-      <li>
-        <span>PositiveFeedBack:</span>
+    <ListStatistics>
+      <ListElem>
+        <ContentSpan good={good}>Good:{good}</ContentSpan>
+      </ListElem>
+      <ListElem>
+        <ContentSpan neutral={neutral}>Neutral:{neutral}</ContentSpan>
+      </ListElem>
+      <ListElem>
+        <ContentSpan bad={bad}>Bad:{bad}</ContentSpan>
+      </ListElem>
+      <ListElem>
+        <ContentSpan>Total:{total}</ContentSpan>
+      </ListElem>
+      <ListElem>
+        <ContentSpan>PositiveFeedBack:</ContentSpan>
         {positivePercentage > 0.1 && (
-          <span>{positivePercentage.toFixed(0)}%</span>
+          <PositiveFeedBack>{positivePercentage.toFixed(0)}%</PositiveFeedBack>
         )}
-      </li>
-    </ul>
+      </ListElem>
+    </ListStatistics>
   );
 };
 

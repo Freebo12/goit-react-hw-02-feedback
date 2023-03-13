@@ -1,18 +1,19 @@
 import PropTypes from 'prop-types';
+import { BtnFeedBack, BoxBtn } from './FeedBackOptions.styled';
 
 export const FeedBackOptions = ({ options, good, neutral, bad }) => {
   return (
-    <>
-      <button type="button" name={options[0]} onClick={good}>
+    <BoxBtn>
+      <BtnFeedBack type="button" name={options[0]} onClick={good}>
         Good
-      </button>
-      <button type="button" name={options[1]} onClick={neutral}>
+      </BtnFeedBack>
+      <BtnFeedBack type="button" name={options[1]} onClick={neutral}>
         Neutral
-      </button>
-      <button type="button" name={options[2]} onClick={bad}>
+      </BtnFeedBack>
+      <BtnFeedBack type="button" name={options[2]} onClick={bad}>
         Bad
-      </button>
-    </>
+      </BtnFeedBack>
+    </BoxBtn>
   );
 };
 
